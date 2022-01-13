@@ -16,3 +16,11 @@ before(function (done) {
       console.log("ket noi bi loi", error);
     });
 });
+
+// Drop cac personcharecter collection truoc khi kiem tra va them
+beforeEach(function (done) {
+  // Drop colelction
+  mongoose.connection.collections.personchars.drop(function () {
+    done();
+  });
+});
